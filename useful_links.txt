@@ -2,6 +2,8 @@ https://docs.oracle.com/javase/tutorial/
 
 http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html
 
+http://stackoverflow.com/questions/40480/is-java-pass-by-reference-or-pass-by-value
+
 http://code.activestate.com/recipes/langs/java/
 
 http://howtodoinjava.com/2012/11/08/a-guide-to-object-cloning-in-java/
