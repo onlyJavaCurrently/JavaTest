@@ -4,4 +4,6 @@ http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html
 
 http://howtodoinjava.com/2012/11/08/a-guide-to-object-cloning-in-java/
 
+https://sites.google.com/a/eng.ucsd.edu/cse-8a-fall-2014/schedule-and-assignments
+
 http://unfoldingmaps.org/
