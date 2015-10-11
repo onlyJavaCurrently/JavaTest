@@ -6,8 +6,17 @@
 # Lib folders
 lib/*
 
+# Bin folders
+bin/*
+
 # IDE files
 .idea
+
+# Eclipse Core
+.project
+
+# JDT-specific (Eclipse Java Development Tools)
+.classpath
 
 # Package Files #
 *.jar
