@@ -23,6 +23,6 @@ public class LifeExpectancy extends PApplet {
     }
 
     public void draw() {
-
+		map.draw();
     }
 }
