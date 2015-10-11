@@ -40,9 +40,11 @@ public class LifeExpectancy extends PApplet {
 		
 		for(String row: rows) {
 			String[] columns = row.split(",");
-			if(columns.length > 0) {
+			System.out.println(columns[5]);
+			if(columns.length > 0 && columns[5].matches("[0-9]+(.[0-9]*)?")) {
+				System.out.println(columns[4]);
 				float value = Float.parseFloat(columns[5]);
-				lifeExpMap.put(columns[4], value);
+				lifeExpMap.put(columns[4], value);			
 			}
 		}
 		
@@ -71,13 +73,13 @@ public class LifeExpectancy extends PApplet {
      * @see processing.core.PApplet#setup()
      */
     public void setup() {
-    	size(800, 600, OPENGL);
-    	map = new UnfoldingMap(this, 50, 50, 700, 500, 
+    	size(1200, 800, OPENGL);
+    	map = new UnfoldingMap(this, 50, 50, 1100, 700, 
     			new Google.GoogleMapProvider());
     	MapUtils.createDefaultEventDispatcher(this, map);
     	
     	lifeExpByCountry = loadLifeExpectancyFromCSV
-    			("../data/LifeExpectancyWorldBank.csv");
+				("../data/LifeExpectancyWorldBank.csv");
     	
     	countries = GeoJSONReader.loadData(this, "../data/countries.geo.json");
     	countryMarkers = MapUtils.createSimpleMarkers(countries);
