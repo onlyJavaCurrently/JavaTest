@@ -23,11 +23,18 @@ public class LifeExpectancy extends PApplet {
 	UnfoldingMap map;
 	Map<String, Float> lifeExpByCountry;
 	
+	Map<String, Float> lifeExpMap;
+	
 	List<Feature> countries;
 	List<Marker> countryMarkers;
 
+	/**
+	 * Loading Life Expectancy from CSV file
+	 * @param fileName - name of the CSV file
+	 * @return Map<String, Float> lifeExpMap
+	 */
 	private Map<String, Float> loadLifeExpectancyFromCSV(String fileName){
-		Map<String, Float> lifeExpMap = new HashMap<String, Float>();
+		lifeExpMap = new HashMap<String, Float>();
 		
 		String[] rows = loadStrings(fileName);
 		
@@ -42,6 +49,24 @@ public class LifeExpectancy extends PApplet {
 		return lifeExpMap;
 	}
 	
+	/**
+	 * Changing colours of countries depending on Life Expectancy
+	 */
+	private void shadeCountries() {
+		
+		for(Marker marker: countryMarkers) {
+			String countryId = marker.getId();
+			
+			if(lifeExpMap.containsKey(countryId)) {
+				float lifeExp = lifeExpMap.get(countryId);
+				int colorLevel = (int) map(lifeExp, 40, 90, 10, 255);
+				marker.setColor(color(255 - colorLevel, 100, colorLevel));
+			} else {
+				marker.setColor(color(150, 150, 150));
+			}
+		}
+	}
+	
     public void setup() {
     	size(800, 600, OPENGL);
     	map = new UnfoldingMap(this, 50, 50, 700, 500, 
@@ -49,11 +74,13 @@ public class LifeExpectancy extends PApplet {
     	MapUtils.createDefaultEventDispatcher(this, map);
     	
     	lifeExpByCountry = loadLifeExpectancyFromCSV
-    			("data/LifeExpectancyWorldBank.csv");
+    			("../data/LifeExpectancyWorldBank.csv");
     	
-    	countries = GeoJSONReader.loadData(this, "data/countries.geo.json");
+    	countries = GeoJSONReader.loadData(this, "../data/countries.geo.json");
     	countryMarkers = MapUtils.createSimpleMarkers(countries);
-
+    	System.out.println(countryMarkers);
+    	map.addMarkers(countryMarkers);
+    	shadeCountries();
     }
 
     public void draw() {
