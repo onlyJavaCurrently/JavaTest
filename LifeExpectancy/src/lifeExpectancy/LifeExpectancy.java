@@ -67,6 +67,9 @@ public class LifeExpectancy extends PApplet {
 		}
 	}
 	
+    /* (non-Javadoc)
+     * @see processing.core.PApplet#setup()
+     */
     public void setup() {
     	size(800, 600, OPENGL);
     	map = new UnfoldingMap(this, 50, 50, 700, 500, 
@@ -83,6 +86,9 @@ public class LifeExpectancy extends PApplet {
     	shadeCountries();
     }
 
+    /* (non-Javadoc)
+     * @see processing.core.PApplet#draw()
+     */
     public void draw() {
 		map.draw();
     }
