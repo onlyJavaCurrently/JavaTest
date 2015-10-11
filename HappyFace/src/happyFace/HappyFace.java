@@ -17,6 +17,12 @@ public class HappyFace extends PApplet{
 	}
 	
 	public void draw() {
-		ellipse(50, 100, 75, 75);
+		fill(40, 40, 200);
+		ellipse(250, 250, 220, 220);
+		fill(255, 255, 255);
+		ellipse(210, 210, 30, 25);
+		ellipse(290, 210, 30, 25);
+		fill(255, 40, 40);
+		arc(250, 275, 140, 110, 0, PI);
 	}
 }
