@@ -1,5 +1,15 @@
 /**
- * 
+ * Applet shows Life Expectancy from World Bank
+ * Lib dependencies:
+ *    tested on jdk1.8.0_60, jre1.8.0_60
+ * 	  core.jar  (processing.core)
+ *    gluegen-rt-natives-windows-amd64.jar
+ *    gluegen-rt.jar
+ *    jogl-all-natives-windows-amd64.jar
+ *    jogl-all.jar
+ *    json4processing.jar
+ *    log4j-1.2.15.jar
+ *    unfolding.0.9.7-uscd.jar
  */
 package lifeExpectancy;
 
