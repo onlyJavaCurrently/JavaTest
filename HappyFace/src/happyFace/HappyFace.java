@@ -3,10 +3,12 @@
  */
 package happyFace;
 
+import processing.core.PApplet;
+
 /**
  * @author KamilWo
  *
  */
-public class HappyFace {
-
+public class HappyFace extends PApplet{
+	
 }
